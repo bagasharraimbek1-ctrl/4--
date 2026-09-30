@@ -1,0 +1,234 @@
+/* ==========================================================================
+   МЕКТЕП РЕСУРСТАРЫ БАЗАСЫ (RESOURCE SHARING HUB) - СТИЛЬДЕР БАПТАУЫ
+   ========================================================================== */
+
+/* 1. CSS ӨЗГЕРМАЛІЛЕРІ (VARIABLES) */
+:root {
+    --primary-color: #2563eb;       /* Негізгі көк түс */
+    --primary-hover: #1d4ed8;       /* Басқандағы түс */
+    --secondary-color: #0f172a;     /* Төменгі (footer) мен мәтін түсі */
+    --accent-color: #f59e0b;        /* Назар аударатын сары түс */
+    --bg-color: #f8fafc;            /* Беттің фон түсі */
+    --card-bg: #ffffff;             /* Карточкалар фоны */
+    --text-main: #1e293b;           /* Негізгі мәтін түсі */
+    --text-muted: #64748b;          /* Көмекші мәтін түсі */
+    --border-color: #e2e8f0;        /* Шекара түстері */
+    --border-radius: 12px;          /* Бұрыштарды дөңгелектеу */
+    --transition: all 0.3s ease;    /* Анимация жылдамдығы */
+}
+
+/* 2. БАЗАЛЫҚ БАПТАУЛАР */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 3. ШАПКА (HEADER) БӨЛІМІ */
+header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+    padding: 3.5rem 1.5rem 3rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 650px;
+    margin: 0 auto 1.8rem auto;
+}
+
+/* Іздеу жолағы */
+.search-container {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.search-container input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3);
+}
+
+/* 4. НЕГІЗГІ КОНТЕЙНЕР (CONTAINER) */
+.container {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    border-left: 4px solid var(--primary-color);
+    padding-left: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+/* 5. КАТАЛОГ СЕТКАСЫ (GRID & CARDS) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Түймелер (Buttons) */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* 6. ҚОСЫМША БӨЛІМДЕР МЕН ФОРМАЛАР */
+.info-box, .feedback-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.feedback-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.feedback-form input, 
+.feedback-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.feedback-form input:focus, 
+.feedback-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* 7. ТӨМЕНГІ БӨЛІК (FOOTER) */
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 8. АДАПТИВТІ ДИЗАЙН (МОБИЛЬДІ ҚҰРЫЛҒЫЛАР СИЯҚТЫ ТЕЛЕФОНДАРҒА) */
+@media (max-width: 640px) {
+    header {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        margin: 1.5rem auto;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

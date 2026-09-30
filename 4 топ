@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мектеп Ресурстарының Базасы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Мектеп Ресурстарының Базасы</h1>
+        <p>Оқу материалдарын, презентацияларды және тесттерді іздеңіз</p>
+    </header>
+
+    <section class="controls">
+        <input type="text" id="searchInput" placeholder="Ресурс атын іздеу...">
+        <select id="categoryFilter">
+            <option value="all">Барлық пәндер</option>
+            <option value="math">Математика</option>
+            <option value="physics">Физика</option>
+            <option value="history">Тарих</option>
+        </select>
+    </section>
+
+    <main id="resourceGrid" class="grid">
+        <!-- Ресурстар JavaScript арқылы осы жерге шығады -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
